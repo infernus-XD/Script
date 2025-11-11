@@ -497,7 +497,7 @@ local function createUI()
         local currentChar = player.Character
         if CurrentRod and currentChar and currentChar:FindFirstChild("HumanoidRootPart") then
             local hrp = currentChar.HumanoidRootPart
-            local yOffset = 0
+            local yOffset = 1030
             local oldAnchor = hrp.Anchored
             hrp.Anchored = true
             local targetY = CurrentRod.Position.Y - yOffset

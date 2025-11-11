@@ -188,7 +188,7 @@ local function ClickDungeonButtons()
         :WaitForChild("Menus")
         :WaitForChild("Dungeon")
         :WaitForChild("InDungeon")
-        :WaitForChild("EquipOld", 1)
+        :WaitForChild("EquipOld", 2)
 
     -- Alternative search if the direct path doesn't work
     if not equipOldButton then

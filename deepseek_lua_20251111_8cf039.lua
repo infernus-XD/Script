@@ -500,7 +500,7 @@ local function createUI()
             local yOffset = 1000
             local oldAnchor = hrp.Anchored
             hrp.Anchored = true
-            local targetY = CurrentRod.Position.Y - yOffset -30
+            local targetY = CurrentRod.Position.Y - yOffset -20
             hrp.CFrame = CFrame.new(CurrentRod.Position.X, targetY, CurrentRod.Position.Z)
             task.wait(0.1)
             hrp.Anchored = oldAnchor

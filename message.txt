@@ -181,6 +181,33 @@ local function ClickDungeonButtons()
         pressEnterOn(createButton)
     end
 
+    -- NEW: Equip Old button (after create, before join)
+    task.wait(0.5)
+    
+    local equipOldButton = player:WaitForChild("PlayerGui")
+        :WaitForChild("Menus")
+        :WaitForChild("Dungeon")
+        :WaitForChild("InDungeon")
+        :WaitForChild("EquipOld", 2)
+
+    -- Alternative search if the direct path doesn't work
+    if not equipOldButton then
+        for _, gui in ipairs(player:WaitForChild("PlayerGui"):GetDescendants()) do
+            if (gui:IsA("ImageButton") or gui:IsA("TextButton")) and (gui.Name:lower():find("equip") or gui.Name:lower():find("old")) then
+                equipOldButton = gui
+                break
+            end
+        end
+    end
+
+    if equipOldButton then
+        print("[Movement Control] Clicking Equip Old button")
+        highlightButton(equipOldButton)
+        pressEnterOn(equipOldButton)
+    else
+        print("[Movement Control] Equip Old button not found")
+    end
+
     -- Join/Start button
     task.wait(0.5)
     
